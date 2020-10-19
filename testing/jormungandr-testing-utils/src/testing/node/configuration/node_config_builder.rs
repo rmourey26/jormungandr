@@ -4,7 +4,8 @@ use std::path::PathBuf;
 
 use jormungandr_lib::{
     interfaces::{
-        Explorer, Log, Mempool, NodeConfig, P2p, Policy, Rest, Tls, TopicsOfInterest, TrustedPeer, Cors,
+        Cors, Explorer, Log, Mempool, NodeConfig, P2p, Policy, Rest, Tls, TopicsOfInterest,
+        TrustedPeer,
     },
     time::Duration,
 };

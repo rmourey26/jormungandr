@@ -16,11 +16,11 @@ use jormungandr_lib::{
         PeerRecord, PeerStats, StakeDistributionDto, VotePlanStatus,
     },
 };
+use reqwest::blocking::Response;
 use std::collections::HashMap;
 use std::io::Read;
 use std::{fs::File, net::SocketAddr, path::Path};
 use thiserror::Error;
-use reqwest::blocking::Response;
 
 #[derive(Debug, Error)]
 pub enum RestError {
@@ -120,7 +120,7 @@ impl JormungandrRest {
         serde_json::from_str(stats).map_err(RestError::CannotDeserialize)
     }
 
-    pub fn stats_raw(&self) -> Result<Response,reqwest::Error> {
+    pub fn stats_raw(&self) -> Result<Response, reqwest::Error> {
         self.inner.stats_raw()
     }
 

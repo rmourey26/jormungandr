@@ -97,15 +97,13 @@ impl BackwardCompatibleRest {
         Ok(response_text)
     }
 
-    pub 
-
-    fn get(&self, path: &str) -> Result<reqwest::blocking::Response, reqwest::Error> {
+    pub fn get(&self, path: &str) -> Result<reqwest::blocking::Response, reqwest::Error> {
         let request = self.path(path);
         self.print_request_path(&request);
 
         let mut client_builder = reqwest::blocking::Client::builder();
 
-        if let Some(cert) =  &self.settings.certificate {
+        if let Some(cert) = &self.settings.certificate {
             client_builder = client_builder
                 .use_rustls_tls()
                 .add_root_certificate(cert.clone())
@@ -169,7 +167,7 @@ impl BackwardCompatibleRest {
         self.raw().stats()?.text()
     }
 
-    pub fn stats_raw(&self) -> Result<Response, reqwest::Error>{
+    pub fn stats_raw(&self) -> Result<Response, reqwest::Error> {
         self.get("node/stats")
     }
 
