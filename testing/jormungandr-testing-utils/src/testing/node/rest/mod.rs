@@ -16,7 +16,6 @@ use jormungandr_lib::{
         PeerRecord, PeerStats, StakeDistributionDto, VotePlanStatus,
     },
 };
-use reqwest::blocking::Response;
 use std::collections::HashMap;
 use std::io::Read;
 use std::{fs::File, net::SocketAddr, path::Path};
@@ -118,10 +117,6 @@ impl JormungandrRest {
     pub fn stats(&self) -> Result<NodeStatsDto, RestError> {
         let stats = &self.inner.stats()?;
         serde_json::from_str(stats).map_err(RestError::CannotDeserialize)
-    }
-
-    pub fn stats_raw(&self) -> Result<Response, reqwest::Error> {
-        self.inner.stats_raw()
     }
 
     pub fn account_state(&self, wallet: &Wallet) -> Result<AccountState, RestError> {
