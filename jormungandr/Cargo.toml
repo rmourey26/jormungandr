@@ -30,6 +30,7 @@ chain-time      = { git = "https://github.com/input-output-hk/chain-libs.git", b
 chain-vote = { git = "https://github.com/input-output-hk/chain-libs.git", branch = "master" }
 cardano-legacy-address = { git = "https://github.com/input-output-hk/chain-libs.git", branch = "master" }
 imhamt = { git = "https://github.com/input-output-hk/chain-libs.git", branch = "master" }
+chain-watch = { git = "https://github.com/input-output-hk/chain-libs.git", branch = "heterogeneous-client-api" }
 error-chain = "0.12"
 futures = "0.3.14"
 hex = "0.4"
