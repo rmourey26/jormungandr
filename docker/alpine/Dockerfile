@@ -1,6 +1,6 @@
 # Simple dockerfile example to build a jormungandr and start in genesis mode
 
-FROM alpine:3.9.4
+FROM alpine:3.19.4
 LABEL MAINTAINER IOHK
 LABEL description="Jormungandr"
 
